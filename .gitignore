@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# C++ build files
+*.o
+*.so
+*.dll
+*.exe
+
+# VSCode
+.vscode/
+
+# Other
+.DS_Store
