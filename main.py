@@ -235,6 +235,19 @@ class RandomAgent(Agent):
     def learn(self, reward: float, new_lob_state: dict):
         pass
 
+class LobAwareTFT(NoisyTitForTat):
+    """An agent that overrides TFT logic if it detects a market imbalance."""
+    def play(self, lob_state: dict, opponent_last_action: Action = None) -> Action:
+        state = self._get_current_state(lob_state)
+        if state[1] == 'Ask_Heavy':
+            return Action(type='MARKET', price_level=0, size=5)
+        elif state[1] == 'Bid_Heavy':
+            return Action(type='MARKET', price_level=0, size=5)
+        else:
+            return super().play(lob_state, opponent_last_action)
+    def _get_current_state(self, lob_state: dict) -> tuple:
+        return lob_state.get('discretized_state', ('Medium', 'Balanced'))
+
 # --- 4. ADVANCED LEARNING AGENTS ---
 class QLearningAgent(Agent):
     def __init__(self, agent_id: str, latency: float = 0.0, epsilon: float = 0.1, alpha: float = 0.1, gamma: float = 0.9):

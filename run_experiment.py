@@ -13,6 +13,7 @@ from main import (
     BayesianAgent,
     QLearningAgent,
     ThompsonAgent,
+    LobAwareTFT,
     calculate_var,
     calculate_cvar
 )
@@ -94,7 +95,6 @@ def run_matchup(agent_a_class, agent_b_class):
         var_B = calculate_var(pnl_B_dollars, 5)
         matchup_results_B['cvar'].append(calculate_cvar(pnl_B_dollars, var_B))
 
-    # --- Return the AVERAGE results for this whole matchup ---
     avg_pnl_A = np.mean(matchup_results_A['final_pnl'])
     avg_cvar_A = np.mean(matchup_results_A['cvar'])
     avg_pnl_B = np.mean(matchup_results_B['final_pnl'])
@@ -117,7 +117,8 @@ if __name__ == "__main__":
         SneakyAgent,
         QLearningAgent,
         BayesianAgent,
-        ThompsonAgent
+        ThompsonAgent,
+        LobAwareTFT
     ]
 
     all_matchups = list(itertools.combinations(agent_classes, 2))
