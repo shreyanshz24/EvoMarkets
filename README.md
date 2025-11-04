@@ -14,7 +14,7 @@ This project runs two primary experiments to analyze strategy fitness: a **stati
 
 ### Finding 1: Round-Robin Tournament (Static Analysis)
 
-We ran a full round-robin tournament (36 matchups, 20 runs each, 1000 rounds per game) to find the strategy with the best average P&L vs. Risk.
+I ran a full round-robin tournament (36 matchups, 20 runs each, 1000 rounds per game) to find the strategy with the best average P&L vs. Risk.
 
 **Conclusion:** The **`ThompsonAgent` ("The Manager")** was the clear winner, achieving the highest P&L (least loss) with minimal tail risk (CVaR). This shows that adaptive, learning-based strategies are the most robust. Pure aggression (`AlwaysDefect`) and pure randomness (`RandomAgent`) are catastrophic, loss-making strategies.
 
@@ -37,7 +37,7 @@ We ran a full round-robin tournament (36 matchups, 20 runs each, 1000 rounds per
 
 ### Finding 2: Evolutionary Simulation (Dynamic Analysis)
 
-We ran a 100-generation evolutionary simulation with all 10 agents to find which strategies are "Evolutionarily Stable" (i.e., which ones take over the population).
+I ran a 100-generation evolutionary simulation with all 10 agents to find which strategies are "Evolutionarily Stable" (i.e., which ones take over the population).
 
 **Conclusion:** No single strategy "wins." The market converges to a **stable, mixed ecosystem** dominated by a diverse group of "cooperative" (passive) and "retaliatory" (TFT-like) agents. The "aggressive" (`AlwaysDefect`) and "random" (`RandomAgent`) strategies are Evolutionarily Unstable and are driven to extinction.
 
