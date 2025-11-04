@@ -79,6 +79,13 @@ I ran a 100-generation evolutionary simulation with all 10 agents to find which 
 - **Quant-Level Risk Analysis:** Includes functions to analyze P&L streams for **Value at Risk (VaR)** and **Conditional Value at Risk (CVaR)** to measure tail risk.
 
 ---
+## Paper
+The full research paper and figures are in the `paper/` directory.  
+To compile it locally:
+```bash
+cd paper
+pdflatex sample-acmtog.tex
+
 
 ## 🏃 How to Run
 
