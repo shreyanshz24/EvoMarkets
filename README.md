@@ -4,7 +4,7 @@ EvoMarkets is a high-performance, agent-based market simulator designed to model
 
 This project bridges the gap between classic game theory (the Iterated Prisoner's Dilemma) and modern financial-market microstructure. It re-frames "Cooperation" as passive liquidity provision (Limit Orders) and "Defection" as aggressive liquidity consumption (Market Orders).
 
-The simulation runs in a latency-driven, 1-v-1 environment where agents compete based on not only their strategy but also their speed. The performance-critical LOB and matching engine are written in **C++** and exposed to Python using **Pybind11**.
+The simulation runs in a latency-driven, 1-v-1 environment where agents compete based on not only their strategy but also with their speed. The performance-critical LOB and matching engine are written in **C++** and exposed to Python using **Pybind11**.
 
 ---
 
